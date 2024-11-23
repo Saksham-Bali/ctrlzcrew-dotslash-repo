@@ -12,3 +12,11 @@ from sklearn import svm
 #to see the accuracy of the models
 from sklearn.metrics import accuracy_score
 
+#importing the data from the dataset
+park_data = pd.read_csv('parkinsons.csv')
+park_data.head(5)
+
+#information on df
+s = park_data.shape
+park_data.info()
+
