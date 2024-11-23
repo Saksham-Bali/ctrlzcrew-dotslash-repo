@@ -1,1 +1,8 @@
-Problem statement
+Problem statement: Healthcare affordability and accessibility remains acritical chjallenge for
+underprivileged people/groups. We are trying to build a system made of mulitple ml models trained
+to detect various diseases based on health parameters like insulin , glucose for diabetes,
+voice frequency for parkinsons and blood pressure, bpm,cholestrol for heart disease.
+This can help poor people save money that would be wasted in high consultancy fees to be paid to
+doctors, especially where there is a chance of a negative test and in some cases can help to 
+prevent mis-diagonisis due to human error. These will allow individuals to make informed health
+decisions and imporve access to quality healthcare.
