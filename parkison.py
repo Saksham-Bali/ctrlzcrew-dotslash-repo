@@ -49,3 +49,13 @@ X_test = standard_df.transform(X_test)
 #training the model usiung SVM, classifying the data based on hyperplane
 model = svm.SVC(kernel = 'linear')
 model.fit(X_train, Y_train)
+
+#evaluating the model
+#checking with the trained data without labels
+X_train_pred = model.predict(X_train)
+train_score = accuracy_score(Y_train, X_train_pred)
+print('Accuracy score of training data: ', train_score)
+#accuracy score of test data
+X_test_pred = model.predict(X_test)
+pred_score = accuracy_score(Y_test, X_test_pred)
+print('Accuracy score of testing data: ', pred_score)
