@@ -24,3 +24,10 @@ scaler.fit(x)
 standardized_data = scaler.transform(x)
 x = standardized_data
 y = diabetes_dataset['Outcome']
+
+# Train Test Split
+X_train, X_test, Y_train, Y_test = train_test_split(x,y,test_size=0.2, stratify = y, random_state = 2)
+
+# Training the model
+classifier = svm.SVC(kernel='linear')
+classifier.fit(X_train,Y_train)
