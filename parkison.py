@@ -54,8 +54,23 @@ model.fit(X_train, Y_train)
 #checking with the trained data without labels
 X_train_pred = model.predict(X_train)
 train_score = accuracy_score(Y_train, X_train_pred)
-print('Accuracy score of training data: ', train_score)
 #accuracy score of test data
 X_test_pred = model.predict(X_test)
 pred_score = accuracy_score(Y_test, X_test_pred)
-print('Accuracy score of testing data: ', pred_score)
+
+#creating a system for predictions
+input_data = (162.56800,198.34600,77.63000,0.00502,0.00003,0.00280,0.00253,0.00841,0.01791,0.16800,0.00793,0.01057,0.01799,0.02380,0.01170,25.67800,0.427785,0.723797,-6.635729,0.209866,1.957961,0.135242)
+input_arr = np.asarray(input_data)
+#reshaping array
+arr_reshaped = input_arr.reshape(1,-1)
+#standardizing the input
+std_arr = standard_df.transform(arr_reshaped)
+
+#output
+pred = model.predict(std_arr)
+print(pred)
+
+if pred[0] == 0:
+    print('The person does not have Parkinsons Disease')
+else:
+    print('The person has Parkinsons Disease')
