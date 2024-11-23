@@ -20,3 +20,21 @@ park_data.head(5)
 s = park_data.shape
 park_data.info()
 
+#finding null/missing values
+park_data.isnull().sum()
+
+#statistical info of the dataset
+park_data.describe()
+
+#distribution of target variable (status - 1(parkinson postive) or 0 (parkinson negative))
+park_data['status'].value_counts()
+
+#mean of df formed by grouping by status
+park_data.groupby('status').mean()
+
+#sepating the features and target
+X = park_data.drop(columns=['name','status'], axis=1)
+Y = park_data['status']
+
+#splitting the data into training and testing data
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=2)
