@@ -39,3 +39,13 @@ Y = park_data['status']
 
 #splitting the data into training and testing data
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=2)
+
+#standardizing the data
+standard_df = StandardScaler()
+standard_df.fit(X_train)
+X_train = standard_df.transform(X_train)
+X_test = standard_df.transform(X_test)
+
+#training the model usiung SVM, classifying the data based on hyperplane
+model = svm.SVC(kernel = 'linear')
+model.fit(X_train, Y_train)
