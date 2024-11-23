@@ -30,10 +30,11 @@ park_data.describe()
 park_data['status'].value_counts()
 
 #mean of df formed by grouping by status
+park_data = park_data.drop(columns = ['name'], axis = 1)
 park_data.groupby('status').mean()
 
 #sepating the features and target
-X = park_data.drop(columns=['name','status'], axis=1)
+X = park_data.drop(columns=['status'], axis=1)
 Y = park_data['status']
 
 #splitting the data into training and testing data
